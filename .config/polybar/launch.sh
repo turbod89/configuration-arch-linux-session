@@ -16,8 +16,8 @@ monitor2="DP1-2"
 
 if check_monitor $monitor1 && check_monitor $monitor2 ; then
   echo "---" | tee -a /tmp/polybar1.log /tmp/polybar2.log
-  polybar default 2>&1 | tee -a /tmp/polybar1.log & disown
-  polybar default-1280x720 2>&1 | tee -a /tmp/polybar2.log & disown
+  MONITOR="$monitor1" polybar default 2>&1 | tee -a /tmp/polybar1.log & disown
+  MONITOR="$monitor2" polybar default-1280x720 2>&1 | tee -a /tmp/polybar2.log & disown
 elif check_monitor $monitor1 ; then
   # Launch top-external
   echo "---" | tee -a /tmp/polybar1.log /tmp/polybar2.log
