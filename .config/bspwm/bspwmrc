@@ -70,11 +70,3 @@ source $HOME/.config/polybar/launch.sh
 
 # wallpaper
 feh --bg-fill ~/.wallpapers/roshar.jpg
-
-# open default windows
-bspc desktop -f '^10' \
-&& tilix -e alsamixer \
-&& bspc node -p east \
-&& bspc node -o 0.3 \
-&& tilix -e gtop
-
