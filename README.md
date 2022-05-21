@@ -8,7 +8,7 @@ This repository contains the configuration for an specific arch linux session.
 
 - Zsh: `.zshrc`.
 
-- An script `.profile` launched by both bash and zsh
+- An script `.commonrc` launched by both bash and zsh
 
 - A `.xinitrc` configuration file.
 
@@ -22,7 +22,7 @@ This repository contains the configuration for an specific arch linux session.
 
 ## How to run it
 
-1. Clone this project and rename it at taste. Ex: `git clone git@github.com:turbod89/configuration-arch-linux-session.git my config`.
+1. Clone this project and rename it at taste. Ex: `git clone git@github.com:turbod89/configuration-arch-linux-session.git my-config`.
 
 2. Edit the file `files.sh` to remove the files you do not want to configure.
 

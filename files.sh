@@ -3,7 +3,7 @@
 files=(
   ".bash_profile"
   ".bashrc"
-  ".profile"
+  ".commonrc"
   ".xinitrc"
   ".zshrc"
   ".config/bspwm"

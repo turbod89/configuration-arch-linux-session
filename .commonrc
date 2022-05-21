@@ -1,0 +1,28 @@
+#!/bin/sh
+
+alias ll='ls -la'
+
+# tilix workarround. Source: https://gnunn1.github.io/tilix-web/manual/vteconfig/
+if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+  source /etc/profile.d/vte.sh
+fi
+
+
+# auto start ssh-agent
+eval `ssh-agent -s`
+
+# auto startX at logging
+if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
+  exec startx
+fi
+
+# Fix for android studio on archlinux
+# https://wiki.archlinux.org/title/android
+export _JAVA_AWT_WM_NONREPARENTING=1
+
+# android development
+export ANDROID_SDK_ROOT=$HOME/Android/Sdk
+export ANDROID_PLATFORM_TOOLS=$ANDROID_SDK_ROOT/platform-tools
+export ANDROID_TOOLS=$ANDROID_SDK_ROOT/tools
+export ANDROID_CMD_LINE_TOOLS=$ANDROID_SDK_ROOT/cmdline-tools
+export PATH="$PATH:$ANDROID_PLATFORM_TOOLS:$ANDROID_TOOLS/bin:$ANDROID_CMD_LINE_TOOLS/latest/bin"

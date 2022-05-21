@@ -1,5 +1,5 @@
-# Include common profile settings
-[[ -e ~/.profile ]] && emulate sh -c 'source ~/.profile'
+# Include common commonrc settings
+[[ -e ~/.commonrc ]] && emulate sh -c 'source ~/.commonrc'
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]

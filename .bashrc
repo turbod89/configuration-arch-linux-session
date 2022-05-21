@@ -8,6 +8,6 @@
 alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
 
-[[ -f .profile ]] && source .profile
+[[ -f .commonrc ]] && source .commonrc
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
