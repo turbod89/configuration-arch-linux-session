@@ -18,6 +18,28 @@ super + Escape
 super + n
   firefox -private
 
+# CUSTOM change layout:
+# 1. Dvorak US
+# 2. QWERTY ES
+super + alt + k + {1,2}
+  { setxkbmap -layout us -variant dvorak, setxkbmap -layout es}
+
+# CUSTOM Special keys
+XF86AudioRaiseVolume
+    amixer sset Master 1%+ unmute
+
+XF86AudioLowerVolume
+    amixer sset Master 1%- unmute
+
+XF86AudioMute
+    amixer sset Master toggle
+
+XF86MonBrightness{Up,Down}
+    xbacklight -{inc,dec} 1%
+
+shift + XF86Audio{Raise,Lower}Volume
+    xbacklight -{inc,dec} 1%
+
 #
 # bspwm hotkeys
 #
@@ -67,6 +89,8 @@ super + {p,b,comma,period}
   bspc node -f @{parent,brother,first,second}
 
 # focus the next/previous window in the current desktop
+#super + {_,shift + }c
+#  bspc node -f {next,prev}.local.!hidden.window
 super + {_,shift + }c
   bspc node -f {next,prev}.local.!hidden.window
 
