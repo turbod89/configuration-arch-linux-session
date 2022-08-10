@@ -21,8 +21,13 @@ super + n
 # CUSTOM change layout:
 # 1. Dvorak US
 # 2. QWERTY ES
-super + alt + k + {1,2}
-  { setxkbmap -layout us -variant dvorak, setxkbmap -layout es}
+super + alt + space
+    current_layout=$(setxkbmap -query | egrep layout | sed "s/layout: *\(.*\)/\1/"); \
+    current_variant=$(setxkbmap -query | egrep variant | sed "s/variant: *\(.*\)/\1/"); \
+    if [ "$current_layout" = "us" ] ; \
+      then setxkbmap -layout es -variant cat ; \
+      else setxkbmap -layout us -variant dvorak ; \
+    fi
 
 # CUSTOM Special keys
 XF86AudioRaiseVolume
