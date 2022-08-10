@@ -16,7 +16,7 @@ super + Escape
 
 # CUSTOM launch firefox
 super + n
-  firefox -private
+  firefox --private-window
 
 # CUSTOM change layout:
 # 1. Dvorak US
